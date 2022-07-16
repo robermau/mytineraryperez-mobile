@@ -23,7 +23,7 @@ export default function HomeScreen({ navigation }) {
           your perfect trip, designed by insiders who know and love
           their cities!".</Text>
           </View>
-          <TouchableOpacity style={styles.callToAction}>
+          <TouchableOpacity  onPress={()=> navigation.navigate('Cities')} style={styles.callToAction}>
              <Text style={styles.btnText}>Welcome to </Text>
              <Text style={styles.btnText}>Ancient Egypt</Text>
           </TouchableOpacity>

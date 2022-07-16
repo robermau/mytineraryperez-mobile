@@ -9,7 +9,7 @@ const commentaryActions = {
         return async (dispatch, getState) => {
 
             if (comment.comment !== "") {
-                const res = await axios.post(`http://localhost:4000/api/itinerary/comment`, { comment,itineraryId }, {
+                const res = await axios.post(`https://mi-tinerary-perez-backend.herokuapp.com/api/itinerary/comment`, { comment,itineraryId }, {
                     headers: {
                         'Authorization': 'Bearer ' + token
                     }
@@ -41,7 +41,7 @@ const commentaryActions = {
 
         const token = localStorage.getItem('token')
         return async (dispatch, getState) => {
-            const res = await axios.put(`http://localhost:4000/api/itinerary/comment`, { comment }, {
+            const res = await axios.put(`https://mi-tinerary-perez-backend.herokuapp.com/api/itinerary/comment`, { comment }, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -59,10 +59,10 @@ const commentaryActions = {
         }
     },
     deleteComment: (id) => {
-      console.log(id)
+    //   console.log(id)
         const token = localStorage.getItem('token')
         return async (dispatch, getState) => {
-            const res = await axios.post(`http://localhost:4000/api/itineraries/comment/${id}`, {}, {
+            const res = await axios.post(`https://mi-tinerary-perez-backend.herokuapp.com/api/itineraries/comment/${id}`, {}, {
                 headers: {
                     'Authorization': 'Bearer '+ token 
                 }

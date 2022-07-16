@@ -11,7 +11,7 @@ const initialState = {
 }
 
 const citiesReducer = (state = initialState, action) => {
-
+     
     switch (action.type) {  //el switch en los reductores es para avisar al reductor que action tiene q tomar y que estado tiene q cargar
         case "GET_CITIES":
             return {

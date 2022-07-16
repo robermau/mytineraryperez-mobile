@@ -4,7 +4,7 @@ const userActions = {
     signUpUsers: (userData) => {
         return async (dispatch, getState) => {
             try {
-                const res = await axios.post('http://localhost:4000/api/auth/signup', { userData })
+                const res = await axios.post('https://mi-tinerary-perez-backend.herokuapp.com/api/auth/signup', { userData })
 
                 console.log(res)
                 dispatch({
@@ -26,14 +26,14 @@ const userActions = {
 
 
     logInUser: (logedUser) => {
-        console.log(logedUser)
+        // console.log(logedUser)
         return async (dispatch, getState) => {
-            const user = await axios.post('http://localhost:4000/api/auth/signin', { logedUser })
-            console.log(user)
+            const user = await axios.post('https://mi-tinerary-perez-backend.herokuapp.com/api/auth/signin', { logedUser })
+            // console.log(user)
             if (user.data.success) {
 
                 localStorage.setItem('token', user.data.response.token)
-                console.log(user.data.success) //tomo el token que le envie desde el back y lo envio al local storage
+                // console.log(user.data.success) //tomo el token que le envie desde el back y lo envio al local storage
                 dispatch({ type: "GET_USER", payload: user.data.response.userData });
             }
             dispatch({
@@ -52,7 +52,7 @@ const userActions = {
         
         return async (dispatch, getState) => {
 
-            await axios.get('http://localhost:4000/api/auth/token', {  // la ruta recibe a traveza del header el metodo de authorizacion bearer
+            await axios.get('https://mi-tinerary-perez-backend.herokuapp.com/api/auth/token', {  // la ruta recibe a traveza del header el metodo de authorizacion bearer
                 headers: {
                     'Authorization': 'Bearer ' + token
                 }, //  Bearer es un metodo que permite autenticar y autorizar usuarios 
