@@ -1,12 +1,32 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image,StyleSheet } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text
-                onPress={() => navigation.navigate('Home')}
-                style={{ fontSize: 26, fontWeight: 'bold' }}>Login Screen</Text>
-        </View>
+        <View style={styles.container}>
+
+          <Image source={require('../../assets/img/notfound.png')} resizeMode='contain' style={styles.imageLogo}/>
+          <Text style={styles.btnText}> UNDER CONSTRUCTION </Text>
+          </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
+      
+      
+    },
+    imageLogo:{
+     height:300,
+     width:400,
+    },
+      btnText: {
+        fontWeight:'bold',
+        fontSize:30,
+        
+      }
+     
+    })
