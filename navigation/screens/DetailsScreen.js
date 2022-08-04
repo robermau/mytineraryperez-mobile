@@ -24,8 +24,8 @@ export default function DetailsScreen({ route, navigation }) {
     const dispatch = useDispatch();
     useEffect(() => {
 
-        dispatch(citiesActions.getOneCity(id))
-
+      const res=   dispatch(citiesActions.getOneCity(id))
+console.log(res) 
         dispatch(itinerariesActions.findItinerariesFromCity(id))
 
         // eslint-disable-next-line
